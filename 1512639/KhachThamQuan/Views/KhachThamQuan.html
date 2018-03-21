@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi" >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body style="font-family:Arial;width:100%;box-sizing:border-box;
+              margin:0px;padding:0px;overflow-x:hidden" 
+              class="container-fluid" 
+              onload="Xu_ly_Khoi_dong()">
+    
+    <div id="CUA_SO_PET" style="background-color:aliceblue;margin:10px">
+            <div class="btn PET" style="margin-left:0px"  >
+                <img  src="../Media/PET.png"
+                     style="width:40px;height:30px;" />
+                <div class="btn TOM_TAT" style="color:blue;">
+                    Mô hình - Công nghệ - Kỹ thuật
+                    <br />Đơn giản
+                </div>
+            </div> 
+            <div   class="btn btn-outline-primary" style="background-color:white;color:blue">
+               Ứng dụng Giảng dạy - Tháng 3/2018
+               <br />Minh họa Xử lý Biến cố -Chưa Xem xét Giao diện 
+            </div>   
+            <div id="Th_Nha_hang" class="btn btn-outline-primary" 
+                 style="background-color:white;color:blue">
+                   Nhà hàng PET 0- Khách Tham quan 
+                  </div>
+        </div>
+       </div>
+    <div id="CUA_SO_CHUC_NANG"  style="background-color:gray;margin:10px" >
+        <div class="DANH_SACH_CHUC_NANG">
+            <div id="Th_Chuc_nang_Tra_cuu" class="btn  CHUC_NANG">              
+                <input id="Th_Chuoi_Tra_cuu" spellcheck="no"
+                  autocomplete="off"
+                   value="" onkeydown="Xu_ly_Tra_cuu()" />
+            </div>
+        </div>
+        </div>
+    <div id="CUA_SO_THONG_BAO" style="background-color:rgb(255, 255, 255);margin:10px"  >
+
+        </div>
+    <div id="CUA_SO_KET_QUA" style="background-color:white;margin:10px"  >
+
+    </div>
+   
+
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+<script src="../Controller/Controller.js" ></script>
+<script>
+//*************** Biến dùng chung  ************
+var Danh_sach_Mat_hang=[]
+var Danh_sach_Mat_hang_Xem=[]
+//*************** Biến Cố Khởi động  ************
+function Xu_ly_Khoi_dong() {
+    
+    Danh_sach_Mat_hang = readListTVsFromXMLFile();
+    Danh_sach_Mat_hang_Xem = Danh_sach_Mat_hang
+
+    var htmlStringListTivis = createHtmlStringListTivis(Danh_sach_Mat_hang)
+    //var htmlStringNotification = "<div style='color:blue;font-size:2em' >Lưu ý Sinh viên đọc thật kỹ Source và Các Ghi chú</div>"
+    //var htmlStringResult = htmlStringNotification + htmlStringListTivis
+
+    CUA_SO_KET_QUA.appendChild(htmlStringListTivis)
+    console.log(htmlStringListTivis)
+
+}
+
+//*************** Biến Cố Yêu cầu Tra cứu  ************
+//PET : Để Đơn giản hóa khi Minh họa 
+// Hiện nay Tra cứu trực tiếp khi người dùng nhấn phím 
+// và không loại các kỳ tự điều khiển
+// Thực tế cần  loại ký tự điều khiển hay Chỉ Xử lý với phím Enter
+function Xu_ly_Tra_cuu( ){
+ 
+}
+</script>      
